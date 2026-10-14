@@ -1,0 +1,277 @@
+@import url('../../assets/fonts/fonts.css');
+
+/* ============================================================
+   MAQUETA 3 · "EDITORIAL BOLD"
+   Estilo: crema + negro + amarillo eléctrico, tipografía display
+   ============================================================ */
+
+:root {
+  --cream: #f4f0e6;
+  --cream-dark: #eae4d6;
+  --black: #141412;
+  --yellow: #ffd21e;
+  --yellow-deep: #f5c400;
+  --white: #fffdf8;
+  --line: rgba(20, 20, 18, 0.14);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--black);
+  font-family: 'Sora', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.display {
+  font-family: 'Archivo Black', 'Sora', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
+}
+
+::selection {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.bg-cream { background-color: var(--cream); }
+.bg-cream-dark { background-color: var(--cream-dark); }
+.bg-black-ink { background-color: var(--black); }
+.bg-yellow { background-color: var(--yellow); }
+.text-yellow { color: var(--yellow); }
+.text-black-ink { color: var(--black); }
+.border-ink { border-color: var(--black); }
+.border-line { border-color: var(--line); }
+
+/* --- Componentes --- */
+.btn-black {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--black);
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.7rem;
+  border: 2px solid var(--black);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-black:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--yellow);
+}
+
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.7rem;
+  border: 2px solid var(--black);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-yellow:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--black);
+}
+
+.btn-outline-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--black);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.7rem;
+  border: 2px solid var(--black);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-outline-ink:hover {
+  background: var(--black);
+  color: var(--yellow);
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--yellow);
+}
+
+.btn-outline-cream {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: transparent;
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.9rem 1.7rem;
+  border: 2px solid var(--cream);
+  transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-outline-cream:hover {
+  background: var(--cream);
+  color: var(--black);
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--yellow);
+}
+
+.card-hard {
+  background: var(--white);
+  border: 2px solid var(--black);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hard:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0 var(--black);
+}
+
+.tag {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.35rem 0.8rem;
+  border: 2px solid var(--black);
+}
+
+.tag-yellow { background: var(--yellow); }
+.tag-black { background: var(--black); color: var(--cream); }
+.tag-cream { background: var(--cream); }
+
+.rotate-n2 { transform: rotate(-2.5deg); }
+.rotate-n1 { transform: rotate(-1deg); }
+.rotate-p2 { transform: rotate(2deg); }
+
+/* --- Inputs --- */
+.field {
+  width: 100%;
+  background: var(--white);
+  border: 2px solid var(--black);
+  padding: 0.85rem 1rem;
+  color: var(--black);
+  outline: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.field::placeholder { color: rgba(20, 20, 18, 0.45); }
+
+.field:focus {
+  box-shadow: 4px 4px 0 var(--yellow);
+}
+
+.field-dark {
+  background: rgba(244, 240, 230, 0.06);
+  border: 2px solid rgba(244, 240, 230, 0.35);
+  color: var(--cream);
+}
+
+.field-dark::placeholder { color: rgba(244, 240, 230, 0.45); }
+
+.field-dark:focus {
+  border-color: var(--yellow);
+  box-shadow: 4px 4px 0 rgba(255, 210, 30, 0.5);
+}
+
+/* --- Animaciones --- */
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.animate-floaty { animation: floaty 6.5s ease-in-out infinite; }
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow { animation: spin-slow 22s linear infinite; }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Ticker --- */
+.ticker {
+  overflow: hidden;
+  background: var(--black);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 2.5rem;
+  width: max-content;
+  animation: ticker-x 24s linear infinite;
+  padding: 0.9rem 0;
+  white-space: nowrap;
+}
+
+@keyframes ticker-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* --- FAQ --- */
+details.faq summary::-webkit-details-marker { display: none; }
+
+details.faq summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details.faq summary .faq-icon {
+  transition: transform 0.25s ease;
+}
+
+details.faq[open] summary .faq-icon {
+  transform: rotate(45deg);
+}
+
+/* --- Utilidades --- */
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.outline-text {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--black);
+}
+
+.outline-text-cream {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--cream);
+}
+
+.hr-thick {
+  height: 2px;
+  background: var(--black);
+}
+
+.year-row {
+  border-bottom: 2px solid var(--black);
+  transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.year-row:hover {
+  background: var(--yellow);
+  padding-left: 0.75rem;
+}
